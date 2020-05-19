@@ -22,6 +22,7 @@ config.server = {
   cors: false,
 };
 
+/**
 config.database = {
   host: 'database',
   port: 5432,
@@ -30,6 +31,17 @@ config.database = {
   password: () => 'oss-attribution-builder-postgres',
   ssl: undefined,
 };
+**/
+
+config.database = {
+  host: process.env.DATABASE_HOST,
+  port: process.env.DATABASE_PORT,
+  database: process.env.DATABASE_NAME,
+  user: process.env.DATABASE_USER,
+  password: () => process.env.DATABASE_PASSWORD,
+  ssl: undefined,
+};
+
 
 config.modules = {
   auth: 'nullauth',
