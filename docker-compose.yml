@@ -8,7 +8,12 @@ services:
     links:
     - database
     environment:
-    - USER
+    - USER=gloria
+    - DATABASE_HOST=database
+    - DATABASE_PORT=5432
+    - DATABASE_NAME=postgres
+    - DATABASE_USER=postgres
+    - DATABASE_PASSWORD=oss-attribution-builder-postgres
   database:
     image: postgres
     volumes:
